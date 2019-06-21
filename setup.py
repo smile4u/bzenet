@@ -41,7 +41,7 @@ ext_modules = [
         libraries=libraries)]
 
 setup(
-  name = 'enet',
+  name = 'enet_bz',
   cmdclass = {'build_ext': build_ext},
   ext_modules = ext_modules
 )

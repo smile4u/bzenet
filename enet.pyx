@@ -168,6 +168,7 @@ cdef extern from "enet/enet.h":
     void enet_peer_throttle_configure(ENetPeer *peer, enet_uint32 interval, enet_uint32 acceleration, enet_uint32 deacceleration)
     int enet_peer_send(ENetPeer *peer, enet_uint8 channelID, ENetPacket *packet)
     ENetPacket* enet_peer_receive(ENetPeer *peer, enet_uint8 *channelID)
+    void enet_peer_timeout(ENetPeer *peer, enet_uint32 timeoutLimit, enet_uint32 timeoutMinimum, enet_uint32 timeoutMaximum)
     void enet_peer_ping(ENetPeer *peer)
     void enet_peer_reset(ENetPeer *peer)
     void enet_peer_disconnect(ENetPeer *peer, enet_uint32 data)
@@ -467,6 +468,16 @@ cdef class Peer:
 
         if self.check_valid():
             enet_peer_reset(self._enet_peer)
+
+    def timeout(self, time, time_min, time_max):
+        """
+        timeout (int time, int time_min, int time_max)
+
+        Sets the timeout parameters for a peer.
+        """
+
+        if self.check_valid():
+            enet_peer_timeout(self._enet_peer, time, time_min, time_max)
 
     def ping(self):
         """
