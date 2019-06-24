@@ -1,4 +1,4 @@
-#Build
+# Build
 1. Clone repo
 ```
 git clone https://github.com/smile4u/pyenet bzenet
@@ -10,14 +10,14 @@ cd bzenet
     - setuptool
     - twine
 
-##Windows
+### Windows
 ```
 python setup.py bdist_wheel --plat-name=win32
 python setup.py bdist_wheel --plat-name=win-amd64
 twine upload dist/*
 ```
 
-##Linux
+### Linux
 Run docker conrainer: (see https://github.com/pypa/manylinux)
 ```
 docker -i -t quay.io/pypa/manylinux2010_x86_64
@@ -34,7 +34,7 @@ auditwheel repair dist/*
  /opt/python/cp37-cp37m/bin/twine upload wheelhouse/*
 ```
 
-##Mac
+### Mac
 Linux package should be ok for osx.
 
 Or build it:
