@@ -41,8 +41,8 @@ ext_modules = [
         libraries=libraries)]
 
 setup(
-  name = 'pyenet_bz',
-  version='0.0.1',
+  name = 'pyenet-bz',
+  version='0.0.2',
   description='A python wrapper for the ENet library',
   url='https://github.com/smile4u/pyenet',
   maintainer='Sergey Zdanevich, BlitzTeam',
