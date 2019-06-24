@@ -1,7 +1,7 @@
 # Build
 1. Clone repo
 ```
-git clone https://github.com/smile4u/pyenet bzenet
+git clone https://github.com/smile4u/bzenet bzenet
 cd bzenet
 ```
 2. Download latest enet lib and unpack it into `enet/` dir.
@@ -22,6 +22,10 @@ Run docker conrainer: (see https://github.com/pypa/manylinux)
 ```
 docker -i -t quay.io/pypa/manylinux2010_x86_64
 ```
+or you can also specify a local dir with `bzenet` that will be available under docker:
+```
+docker -i -t -v /path_to_local/bzenet:/bzenet quay.io/pypa/manylinux2010_x86_64
+```
 Under docker, install:
 ```
 /opt/python/cp37-cp37m/bin/pip install Cython
@@ -29,9 +33,10 @@ Under docker, install:
 ```
 Under docker, run from cloned `bzenet` folder:
 ```
+cd /bzenet
 /opt/python/cp37-cp37m/bin/python3.7 setup.py bdist_wheel
 auditwheel repair dist/*
- /opt/python/cp37-cp37m/bin/twine upload wheelhouse/*
+/opt/python/cp37-cp37m/bin/twine upload wheelhouse/*
 ```
 
 ### Mac
