@@ -1,0 +1,5 @@
+include LICENSE
+include enet.pyx
+include *.py
+include enet/*.c
+include enet/include/enet/*.h
