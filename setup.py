@@ -23,9 +23,11 @@ define_macros = [('HAS_POLL', None),
                  ('HAS_SOCKLEN_T', None) ]
 
 libraries = []
+flags = ["-O3"]
 
 if sys.platform == 'win32':
     define_macros.extend([('WIN32', None)])
+    flags = ["/O2"]
     libraries.extend(['ws2_32', 'Winmm'])
 
 if sys.platform != 'darwin':
@@ -33,8 +35,8 @@ if sys.platform != 'darwin':
 
 ext_modules = [
     Extension(
-        "enet",
-        extra_compile_args=["-O3"],
+        "bzenet",
+        extra_compile_args=flags,
         sources=source_files,
         include_dirs=["enet/include/"],
         define_macros=define_macros,
@@ -42,7 +44,7 @@ ext_modules = [
 
 setup(
   name = 'bzenet',
-  version='0.0.4',
+  version='0.1.0',
   description='A python wrapper for the ENet library ver. 1.3.14',
   url='https://github.com/smile4u/pyenet',
   maintainer='Sergey Zdanevich, BlitzTeam',
