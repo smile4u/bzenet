@@ -40,9 +40,12 @@ ext_modules = [
         define_macros=define_macros,
         libraries=libraries)]
 
+lib_version = "1.3.14"
+package_version = lib_version + '.bz1'
+
 setup(
   name = 'pyenet-bz',
-  version='0.0.2',
+  version=package_version,
   description='A python wrapper for the ENet library',
   url='https://github.com/smile4u/pyenet',
   maintainer='Sergey Zdanevich, BlitzTeam',
