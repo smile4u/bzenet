@@ -18,8 +18,8 @@ twine upload dist/*
 
 ### Windows prebuild
 ```
-python setup.py bdist_wheel --plat-name=win32
-python setup.py bdist_wheel --plat-name=win-amd64
+python setup.py build --plat-name=win32 bdist_wheel
+python setup.py build --plat-name=win-amd64 bdist_wheel
 twine upload dist/*
 ```
 
