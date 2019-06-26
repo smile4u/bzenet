@@ -26,11 +26,11 @@ twine upload dist/*
 ### Linux prebuild
 Run docker conrainer: (see https://github.com/pypa/manylinux)
 ```
-docker -i -t quay.io/pypa/manylinux2010_x86_64
+docker run -it quay.io/pypa/manylinux2010_x86_64
 ```
 or you can also specify a local dir with `bzenet` that will be available under docker:
 ```
-docker -i -t -v /path_to_local/bzenet:/bzenet quay.io/pypa/manylinux2010_x86_64
+docker run -it -v /path_to_local/bzenet:/bzenet quay.io/pypa/manylinux2010_x86_64
 ```
 Under docker, install:
 ```

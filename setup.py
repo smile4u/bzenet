@@ -48,7 +48,7 @@ setup(
     name='bzenet',
     version='0.1.2',
     description='A python wrapper for the ENet library ver. 1.3.14',
-    url='https://github.com/smile4u/pyenet',
+    url='https://github.com/smile4u/bzenet',
     maintainer='Sergey Zdanevich, BlitzTeam',
     maintainer_email='sergey.zdanevich@blitzteam.com',
     cmdclass={'build_ext': build_ext},
