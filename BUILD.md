@@ -22,6 +22,9 @@ python setup.py build --plat-name=win32 bdist_wheel
 python setup.py build --plat-name=win-amd64 bdist_wheel
 twine upload dist/*
 ```
+Note: 
+- win32 build should be done with 32-bit Python installed
+- win-amd64 build should be done with 64-bit Python installed
 
 ### Linux prebuild
 Run docker conrainer: (see https://github.com/pypa/manylinux)
