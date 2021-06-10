@@ -5,7 +5,8 @@ git clone https://github.com/smile4u/bzenet bzenet
 cd bzenet
 ```
 2. Download latest enet lib and unpack it into `enet/` dir.
-3. Install python modules: 
+3. Apply patches from `patches` folder.
+4. Install python modules: 
     - Cython
     - setuptool
     - twine

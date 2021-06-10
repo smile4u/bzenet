@@ -46,7 +46,7 @@ ext_modules = [
 
 setup(
     name='bzenet',
-    version='0.1.2',
+    version='0.1.5',
     description='A python wrapper for the ENet library ver. 1.3.14',
     url='https://github.com/smile4u/bzenet',
     maintainer='Sergey Zdanevich, BlitzTeam',
