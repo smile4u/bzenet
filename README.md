@@ -1,4 +1,4 @@
-#pyenet
+# pyenet
 
 pyenet is a python wrapper for the ENet library by Lee Salzman,
  http://enet.bespin.org
@@ -6,16 +6,16 @@ pyenet is a python wrapper for the ENet library by Lee Salzman,
 It was originally written by Scott Robinson <scott@tranzoa.com> and is
 currently maintained by Andrew Resch <andrewresch@gmail.com>
 
-##License
+## License
 pyenet is licensed under the BSD license, see LICENSE for details.
 enet is licensed under the MIT license, see http://enet.bespin.org/License.html
 
-##Dependencies
+## Dependencies
 
 Building pyenet requires all the same dependencies as enet plus Cython and,
 obviously, Python.
 
-##Installation
+## Installation
 
 The first step is to download the enet sources from http://enet.bespin.org and
 extract it to the enet/ directory in pyenet's source directory.  You could also
@@ -32,7 +32,7 @@ Once that is complete, install the new pyenet module:
 # python setup.py install
 ```
 
-##Usage
+## Usage
 
 Once you have installed pyenet, you only need to import the enet module to
 start using enet in your project.
