@@ -46,13 +46,13 @@ ext_modules = [
 
 setup(
     name='bzenet',
-    version='0.1.5',
-    description='A python wrapper for the ENet library ver. 1.3.14',
+    version='0.1.6',
+    description='A python wrapper for the ENet library ver. 1.3.18',
     url='https://github.com/smile4u/bzenet',
     maintainer='Sergey Zdanevich, BlitzTeam',
     maintainer_email='sergey.zdanevich@blitzteam.com',
     cmdclass={'build_ext': build_ext},
     ext_modules=ext_modules,
-    setup_requires=['Cython>=0,<1'],
-    install_requires=['Cython>=0,<1']
+    setup_requires=['Cython>=3,<4'],
+    install_requires=['Cython>=3,<4']
 )
