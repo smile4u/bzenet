@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel", "cython"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bzenet"
+version = "0.1.6"
+description = "A python wrapper for the ENet library ver. 1.3.14"
+urls = { Homepage = "https://github.com/smile4u/bzenet" }
+maintainers = [
+    { name = "Sergey Zdanevich, BlitzTeam", email = "sergey.zdanevich@blitzteam.com" },
+]
+
+[tool.setuptools.packages.find]
+exclude = ["enet", "patches"]

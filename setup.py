@@ -1,6 +1,5 @@
-from setuptools import setup
-from setuptools import Extension
-from Cython.Distutils import build_ext
+from setuptools import setup, Extension
+from Cython.Build import cythonize
 
 import glob
 import sys
@@ -44,15 +43,4 @@ ext_modules = [
         define_macros=define_macros)
     ]
 
-setup(
-    name='bzenet',
-    version='0.1.5',
-    description='A python wrapper for the ENet library ver. 1.3.14',
-    url='https://github.com/smile4u/bzenet',
-    maintainer='Sergey Zdanevich, BlitzTeam',
-    maintainer_email='sergey.zdanevich@blitzteam.com',
-    cmdclass={'build_ext': build_ext},
-    ext_modules=ext_modules,
-    setup_requires=['Cython>=0,<1'],
-    install_requires=['Cython>=0,<1']
-)
+setup(ext_modules=cythonize(ext_modules))
