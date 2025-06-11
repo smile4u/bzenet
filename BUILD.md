@@ -1,59 +1,40 @@
 # Build
-1. Clone repo
-```
+## 1. Clone repo
+```sh
 git clone https://github.com/smile4u/bzenet bzenet
 cd bzenet
 ```
-2. Download latest enet lib and unpack it into `enet/` dir.
-3. Apply patches from `patches` folder.
-4. Install python modules: 
-    - Cython
-    - setuptool
-    - twine
+## 2. Download latest enet lib and unpack it into `enet/` dir.
+```sh
+git clone --branch v1.3.14 https://github.com/lsalzman/enet
+```
+## 3. Apply patches from `patches` folder.
+```sh
+git apply .\patches\01.patch_bze-14386.diff
+```
+## 4. Build package
 
-### Sources
-```
-python setup.py sdist
-twine upload dist/*
-```
+Requirements: python with pip and venv
 
-### Windows prebuild
-```
-python setup.py build --plat-name=win32 bdist_wheel
-python setup.py build --plat-name=win-amd64 bdist_wheel
-twine upload dist/*
-```
-Note: 
-- win32 build should be done with 32-bit Python installed
-- win-amd64 build should be done with 64-bit Python installed
-
-### Linux prebuild
-Run docker conrainer: (see https://github.com/pypa/manylinux)
-```
-docker run -it quay.io/pypa/manylinux2010_x86_64
-```
-or you can also specify a local dir with `bzenet` that will be available under docker:
-```
-docker run -it -v /path_to_local/bzenet:/bzenet quay.io/pypa/manylinux2010_x86_64
-```
-Under docker, install:
-```
-/opt/python/cp37-cp37m/bin/pip install Cython
-/opt/python/cp37-cp37m/bin/pip install twine
-```
-Under docker, run from cloned `bzenet` folder:
-```
-cd /bzenet
-/opt/python/cp37-cp37m/bin/python3.7 setup.py bdist_wheel
-auditwheel repair dist/*
-/opt/python/cp37-cp37m/bin/twine upload wheelhouse/*
+Prepare venv
+```sh
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install setuptools cython twine build
 ```
 
-### Mac prebuild
-Sources package should be ok for osx.
+Build package
+```sh
+.venv\Scripts\python.exe -m build
+```
 
-Or pre-build it with:
+# Publish
+```sh
+.venv\Scripts\python.exe -m twine upload dist/*
 ```
-python setup.py bdist_wheel
-twine upload dist/*
+
+# Test
+```sh
+.venv\Scripts\python.exe -m pip install -e .
+.venv\Scripts\python.exe test_enet.py
 ```
+
